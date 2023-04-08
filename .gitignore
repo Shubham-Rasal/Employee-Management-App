@@ -73,5 +73,6 @@ src/public/uploads
 # Backups and volumes
 /backup
 src/mysql_data
+/mysql_data
 
 
