@@ -148,4 +148,11 @@ location / {
 }
 
 
+
 ```
+
+8. Added backup deamon using python
+
+Created a python script to backup the mysql database.
+
+
