@@ -18,13 +18,14 @@ jobs:
         name: Push to Docker Hub
         run: docker-compose push
 
-      - name: Health check
+      - 
+        name: Health check
         uses: actions/setup-python@v4
         with:
           python-version: '3.10' 
-        - run: python -m pip install --upgrade pip
-        - run: pip install requests
-        - run: python healthcheck.py
+        run: python -m pip install --upgrade pip
+        run: pip install requests
+        run: python healthcheck.py
         
 
       
