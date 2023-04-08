@@ -19,16 +19,13 @@ jobs:
         run: docker-compose push
 
       - 
-        name: Health check
-        uses: actions/setup-python@v4
+        name: Health Check
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.10' 
-      - 
-        name: Install dependencies
-        run: pip install requests
-      -
-        name: Health check
-        run: python health_check.py
+      - run: |
+          pip install requests
+          python .github/workflows/health_check.py
         
 
       
