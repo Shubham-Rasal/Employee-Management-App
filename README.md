@@ -155,4 +155,8 @@ location / {
 
 Created a python script to backup the mysql database.
 
+9. Added a health check endpoint
+
+Added Github Actions for building and pushing the docker image to docker hub.
+
 
