@@ -1,14 +1,21 @@
-steps:
-  # need checkout before using compose-action
-  - uses: actions/checkout@v3
-  - uses: isbang/compose-action@v1.4.1
-    with:
-      compose-file: "docker-compose.yml"
-      down-flags: "--volumes"
-      services: |
-        web1
-        web2
-        web3
-        db
-        nginx
-      up-flags: "--build --force-recreate"
+name: Docker Compose and Docker Hub Push
+on:
+  push:
+    branches:
+      - master
+      - main
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tag_with_ref: true
+          tag_with_sha: true
+          add_git_labels: true
+          push: true
