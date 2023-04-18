@@ -147,8 +147,6 @@ location / {
 
 }
 
-
-
 ```
 
 8. Added backup deamon using python
@@ -159,4 +157,7 @@ Created a python script to backup the mysql database.
 
 Added Github Actions for building and pushing the docker image to docker hub.
 
+![cicd](cicd.png "CICD")
+
+Added a python script that sends a request to the health check endpoint for every push to the main branch.
 

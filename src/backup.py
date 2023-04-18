@@ -62,7 +62,7 @@ def test():
      print("This is test function")
 
 # Scheduling task to be run every 5 seconds
-# schedule.every(5).seconds.do(backup)
+schedule.every(5).seconds.do(backup)
 
 #Schedule backup every day at 12:00am
 schedule.every().day.at("00:00").do(backup)
@@ -76,4 +76,4 @@ while True:
 	# Checks whether a scheduled task
 	# is pending to run or not
 	schedule.run_pending()
-	time.sleep(1)
+	time.sleep(10)
